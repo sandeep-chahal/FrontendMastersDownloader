@@ -31,6 +31,7 @@ async function run() {
 async function dlCourse(page, data, api_url, res) {
 	const len = data['lessonData'].length
 	const course = data['slug']
+	dlResources(data)
 	if (data['hasTranscript']) {
 		for (let lesson of data['lessonData']) {
 			const { index, statsId, slug } = lesson
@@ -43,6 +44,17 @@ async function dlCourse(page, data, api_url, res) {
 		const { index, slug } = lesson
 		let json_video = await extractJsonVideo(page, api_url, lesson, res)
 		dlfile(json_video['url'], course, index, len, 'webm', slug)
+	}
+}
+
+async function dlResources(data) {
+	const { slug } = data
+	const len = data['resources'].length
+	for (let [index, resource] of data['resources'].entries()) {
+		const { label, url } = resource
+		console.log(label)
+		const ext = url.split('.').slice(-1)
+		dlfile(url, slug, index, len, ext, label)
 	}
 }
 
