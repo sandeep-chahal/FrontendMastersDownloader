@@ -15,7 +15,7 @@ const {username, password, course, res} = commandLineArgs(optionDefinitions)
 
 async function run() {
 	const api_url = 'https://api.frontendmasters.com/v1/kabuki'
-	const browser = await puppeteer.launch({ headless: false });
+	const browser = await puppeteer.launch({ headless: true });
 	const page = await init(browser)
 	await login(page)
 	let data = await extractData(page, api_url, course)
