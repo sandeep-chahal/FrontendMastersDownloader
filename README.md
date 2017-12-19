@@ -11,7 +11,7 @@ Simple and fast script for downloading hard copy of [FrontendMasters](frontendma
 ## how to use
 after you clone/download, install dependencies 
 ```bash
-install dependencies
+npm install
 ```
 run script with course name from url (frontendmasters.com/course/course-name/)
 ```bash
