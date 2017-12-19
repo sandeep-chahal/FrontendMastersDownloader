@@ -5,11 +5,12 @@ Simple and fast script for downloading hard copy of [FrontendMasters](frontendma
 ## features
 
  * Also save transcripts (subtitles) if available
+ * Also download courses resources
  * Choose between available video quality (360/720/1080) 
  * Can handle maximum rate-limit (waits for limit clears)
 
 ## how to use
-after you clone/download, install dependencies 
+After you clone/download, install dependencies 
 ```bash
 npm install
 ```
