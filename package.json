@@ -1,0 +1,25 @@
+{
+  "name": "frontendmastersdownloader",
+  "version": "1.0.0",
+  "description": "A node puppeteer cli tool to keep offline copy of frontendmasters courses Edit",
+  "main": "femdl.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/20lives/FrontendMastersDownloader.git"
+  },
+  "keywords": [
+    "frontendmasters"
+  ],
+  "author": "20lives",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/20lives/FrontendMastersDownloader/issues"
+  },
+  "homepage": "https://github.com/20lives/FrontendMastersDownloader#readme",
+  "dependencies": {
+    "command-line-args": "^4.0.7",
+    "download": "^6.2.5",
+    "puppeteer": "^0.13.0",
+    "system-sleep": "^1.3.6"
+  }
+}
