@@ -31,7 +31,18 @@ async function run() {
 async function dlCourse(page, data, api_url, res) {
   const len = data['lessonData'].length
   const course = data['slug']
+  dlTranscripts(data, api_url)
   dlResources(data)
+  for (let lesson of data['lessonData']) {
+    const { index, slug } = lesson
+    let json_video = await extractJsonVideo(page, api_url, lesson, res)
+    dlfile(json_video['url'], course, index, len, 'webm', slug)
+  }
+}
+
+async function dlTranscripts(data, api_url) {
+  const len = data['lessonData'].length
+  const course = data['slug']
   if (data['hasTranscript']) {
     for (let lesson of data['lessonData']) {
       const { index, statsId, slug } = lesson
@@ -39,11 +50,6 @@ async function dlCourse(page, data, api_url, res) {
       dlfile(transcript_url, course, index, len, 'vtt', slug)
       sleep(0.2*1000);
     }
-  }
-  for (let lesson of data['lessonData']) {
-    const { index, slug } = lesson
-    let json_video = await extractJsonVideo(page, api_url, lesson, res)
-    dlfile(json_video['url'], course, index, len, 'webm', slug)
   }
 }
 
