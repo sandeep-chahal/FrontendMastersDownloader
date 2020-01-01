@@ -22,3 +22,4 @@ node femdl.js -u 'my@email.com' -p 'mypw' -r 1080 -c 'course-name'
 ## fair use
 Before using this script please read and follow frontendmasters [terms of service](https://frontendmasters.com/assets/MasterServicesAgreement.pdf) and don't violate any of their copyright.
 
+[![Run on Repl.it](https://repl.it/badge/github/20lives/FrontendMastersDownloader)](https://repl.it/github/20lives/FrontendMastersDownloader)
